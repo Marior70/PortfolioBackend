@@ -16,5 +16,12 @@ public class Titulo {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
    private String nombre;
-   
+
+   @ManyToOne()
+   @JoinColumn(name= "id_titulo")
+   private Persona persona;
+
+   @OneToOne(mappedBy = "educacion", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
+    private Educacion educacion;   
+
 }

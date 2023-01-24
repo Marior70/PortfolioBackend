@@ -27,8 +27,8 @@ public class Usuario {
    @Column (name= "es_admin")
    private Boolean esAdmin;
 
-   @ManyToOne(fetch = FetchType.EAGER)
    @JoinColumn(name = "id_entidad")
+   @OneToOne(fetch = FetchType.LAZY, optional = false)
    private Entidad entidad;
 
    /* @ManyToOne(fetch = FetchType.EAGER, optional = false)

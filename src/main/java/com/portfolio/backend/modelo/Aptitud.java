@@ -19,8 +19,8 @@ public class Aptitud {
    private String nombre;
    private Integer valor;
    
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   /* @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_persona")
-   private Persona persona;
+   private Persona persona; */
 
 }

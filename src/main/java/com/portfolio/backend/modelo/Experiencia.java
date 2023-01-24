@@ -22,19 +22,11 @@ public class Experiencia {
    private String descripcion;
    
    // private String entidad;
-   private String logo;
+   // private String logo;
    // private String Localidad;
 
    @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_entidad")
-   private Entidad entidad;
-
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name="id_localidad")
-   private Localidad localidad;
-
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name = "id_persona")
-   private Persona persona;
+   private Entidad entidades;
 
 }

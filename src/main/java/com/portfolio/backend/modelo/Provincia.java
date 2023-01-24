@@ -1,5 +1,7 @@
 package com.portfolio.backend.modelo;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -16,5 +18,8 @@ public class Provincia {
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
    private String nombre;
+
+   @OneToMany(mappedBy = "provincias", cascade = CascadeType.ALL, orphanRemoval = false)
+    private List<Localidad> localidad;
 
 }

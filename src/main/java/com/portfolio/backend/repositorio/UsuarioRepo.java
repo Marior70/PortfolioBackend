@@ -10,5 +10,6 @@ import com.portfolio.backend.modelo.Usuario;
 @Repository
 public interface UsuarioRepo extends JpaRepository <Usuario, Long>{
    
-   Optional<Usuario> findOneByEmail(String email); // Método utilizado 
+   Optional<Usuario> findOneByEmail(String email);
+
 }

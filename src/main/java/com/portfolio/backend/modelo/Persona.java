@@ -1,5 +1,7 @@
 package com.portfolio.backend.modelo;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
@@ -27,15 +29,22 @@ public class Persona {
    // private String localidad;
    // private String provincia;
 
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name="id_titulo")
-   private Titulo titulo;
+   // @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   // @JoinColumn(name="id_titulo")
+   // private Titulo titulo;
+
+   @OneToMany(mappedBy = "personas", cascade = CascadeType.ALL, orphanRemoval = false)
+   private List<Titulo> titulo;
    
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name="id_localidad")
+   // @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   // @JoinColumn(name="id_localidad")
+   // private Localidad localidad;
+
+   @JoinColumn(name= "id_localidad")
+   @OneToOne(fetch = FetchType.LAZY)
    private Localidad localidad;
    
-   private Boolean borrado;
+   // private Boolean borrado;
    // Constructor vacio
    //public Persona() {
    //}
@@ -54,5 +63,13 @@ public class Persona {
    //    this.movil = movil;
    //    this.acercade = acercade;      
    // }
+
+   // @Override
+   // public String toString() {
+   //    return this.nombres + this.apellidos;
+   // }
+   public String fullName() {
+      return this.nombres + " " + this.apellidos;
+   }
 
 }

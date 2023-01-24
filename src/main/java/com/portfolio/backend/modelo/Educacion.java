@@ -23,24 +23,19 @@ public class Educacion {
 
    // private String titulo;
    // private String entidad;
-   private String logo;
+   // private String logo;
    // private String Localidad;
    
-
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name = "id_titulo")
-   private Titulo titulo;
-
    @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_entidad")
-   private Entidad entidad;
+   private Entidad entidades;
 
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name="id_localidad")
-   private Localidad localidad;
+   @OneToOne(fetch = FetchType.EAGER, optional = false)
+   @JoinColumn(name = "id_titulo")
+   private Titulo titulos;
 
-   @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   /* @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_persona")
-   private Persona persona;
+   private Persona persona; */
 
 }
