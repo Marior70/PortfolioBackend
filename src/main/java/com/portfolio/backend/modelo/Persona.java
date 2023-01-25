@@ -1,6 +1,6 @@
 package com.portfolio.backend.modelo;
 
-import java.util.List;
+// import java.util.List;
 
 import javax.persistence.*;
 
@@ -33,15 +33,18 @@ public class Persona {
    // @JoinColumn(name="id_titulo")
    // private Titulo titulo;
 
-   @OneToMany(mappedBy = "personas", cascade = CascadeType.ALL, orphanRemoval = false)
-   private List<Titulo> titulo;
+   @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   @JoinColumn(name = "id_titulo")
+   private Titulo titulo;
+   // @OneToMany(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Titulo> titulo;
    
    // @ManyToOne(fetch = FetchType.EAGER, optional = false)
    // @JoinColumn(name="id_localidad")
    // private Localidad localidad;
 
    @JoinColumn(name= "id_localidad")
-   @OneToOne(fetch = FetchType.LAZY)
+   @OneToOne(fetch = FetchType.LAZY, optional = false)
    private Localidad localidad;
    
    // private Boolean borrado;

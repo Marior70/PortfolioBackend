@@ -10,18 +10,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name= "titulos")
+@Table(name = "titulos")
 public class Titulo {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
    private String nombre;
 
-   @ManyToOne()
-   @JoinColumn(name= "id_titulo")
-   private Persona persona;
+   // @ManyToOne()
+   // @JoinColumn(name = "id_titulo")
+   // private Persona persona;
 
-   @OneToOne(mappedBy = "educacion", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
-    private Educacion educacion;   
+   // @OneToOne(mappedBy = "educacion", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
+   // private Educacion educacion;
 
 }

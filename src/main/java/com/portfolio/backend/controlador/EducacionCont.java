@@ -3,6 +3,7 @@ package com.portfolio.backend.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,10 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.portfolio.backend.modelo.Educacion;
 import com.portfolio.backend.interfaces.IEducacionService;
+import com.portfolio.backend.modelo.Educacion;
 
 @RestController
+@CrossOrigin
 public class EducacionCont {
 
 
@@ -28,7 +30,7 @@ public class EducacionCont {
       return educacionServ.obtenerEducacion();
    }
 
-   @GetMapping("/api/educacion/bucar/{id}")
+   @GetMapping("/api/educacion/buscar/{id}")
    @ResponseBody
    public Educacion buscarEducacion(@PathVariable Long id) {
       return educacionServ.buscarEducacion(id);

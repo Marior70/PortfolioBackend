@@ -31,6 +31,7 @@ public class Usuario {
    @OneToOne(fetch = FetchType.LAZY, optional = false)
    private Entidad entidad;
 
+   // Al configurar el atributo 'esAdmin', eliminé del modelo a Grupo, ya que se necesitan dos permisos: "visualizar" y "editar" el portfolio
    /* @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_grupo")
    private Grupo grupo; */

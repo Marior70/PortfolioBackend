@@ -3,6 +3,7 @@ package com.portfolio.backend.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -10,10 +11,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.portfolio.backend.interfaces.ITituloService;
 import com.portfolio.backend.modelo.Titulo;
 
+@RestController
+@CrossOrigin
 public class TituloCont {
 
    @Autowired
@@ -22,7 +26,6 @@ public class TituloCont {
    @GetMapping("/api/titulo/listar")
    @ResponseBody
    public List<Titulo> obtenerTitulos() {
-      // return listaTitulos;
       return tituloServ.obtenerTitulos();
    }
 

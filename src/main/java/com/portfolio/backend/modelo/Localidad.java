@@ -1,6 +1,6 @@
 package com.portfolio.backend.modelo;
 
-import java.util.List;
+// import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,15 +24,18 @@ public class Localidad {
    @JoinColumn(name = "id_provincia")
    private Provincia provincia;
 
-   @OneToOne(mappedBy = "personas", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY, optional = false)
-   private Persona persona;
+   // @OneToOne(mappedBy = "persona", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY, optional = false)
+   // private Persona persona;
 
-   @OneToMany(mappedBy = "localidades", cascade = CascadeType.ALL, orphanRemoval = false)
-   private List<Entidad> entidad;
+   // @OneToMany(mappedBy = "localidad", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Entidad> entidad;
 
-   @Override
-   public String toString() {
+   // @Override
+   // public String toString() {
+   //    return this.nombre + ", " + this.provincia.getNombre() + " - AR";
+   // }
+
+   public String fullLocalidad() {
       return this.nombre + ", " + this.provincia.getNombre() + " - AR";
    }
-
 }

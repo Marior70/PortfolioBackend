@@ -1,6 +1,6 @@
 package com.portfolio.backend.modelo;
 
-import java.util.List;
+// import java.util.List;
 
 import javax.persistence.*;
 
@@ -12,14 +12,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table (name= "provincias")
+@Table(name = "provincias")
 public class Provincia {
    @Id
    @GeneratedValue(strategy = GenerationType.IDENTITY)
    private Long id;
    private String nombre;
 
-   @OneToMany(mappedBy = "provincias", cascade = CascadeType.ALL, orphanRemoval = false)
-    private List<Localidad> localidad;
+   // @OneToMany(mappedBy = "provincia", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Localidad> localidad;
 
 }

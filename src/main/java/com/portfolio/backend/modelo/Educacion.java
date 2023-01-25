@@ -28,11 +28,11 @@ public class Educacion {
    
    @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_entidad")
-   private Entidad entidades;
+   private Entidad entidad;
 
    @OneToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_titulo")
-   private Titulo titulos;
+   private Titulo titulo;
 
    /* @ManyToOne(fetch = FetchType.EAGER, optional = false)
    @JoinColumn(name = "id_persona")

@@ -1,6 +1,6 @@
 package com.portfolio.backend.modelo;
 
-import java.util.List;
+// import java.util.List;
 
 import javax.persistence.*;
 
@@ -24,19 +24,19 @@ public class Entidad {
    // private String localidad;
 
    @ManyToOne(fetch = FetchType.EAGER, optional = false)
-   @JoinColumn(name = "id_localidad")
+   @JoinColumn(name = "id_localidad")// Relación bidireccional con 
    private Localidad localidad;
 
-   @OneToOne(mappedBy = "entidades", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
-   private Usuario usuario;
+   // @OneToOne(mappedBy = "entidad", cascade = CascadeType.ALL, orphanRemoval = false, fetch = FetchType.LAZY)
+   // private Usuario usuario;
 
-   @OneToMany(mappedBy = "entidades", cascade = CascadeType.ALL, orphanRemoval = false)
-   private List<Experiencia> experiencia;
+   // @OneToMany(mappedBy = "entidad", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Experiencia> experiencia;
 
-   @OneToMany(mappedBy = "entidades", cascade = CascadeType.ALL, orphanRemoval = false)
-   private List<Educacion> educacion;
+   // @OneToMany(mappedBy = "entidad", cascade = CascadeType.ALL, orphanRemoval = false)
+   // private List<Educacion> educacion;
 
-   @OneToMany(mappedBy = "entidades", cascade = CascadeType.ALL, orphanRemoval = false)
-    private List<Curso> curso;
+   // @OneToMany(mappedBy = "entidad", cascade = CascadeType.ALL, orphanRemoval = false)
+   //  private List<Curso> curso;
 
 }
