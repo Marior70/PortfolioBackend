@@ -43,8 +43,8 @@ public class Persona {
    // @JoinColumn(name="id_localidad")
    // private Localidad localidad;
 
-   @JoinColumn(name= "id_localidad")
    @OneToOne(fetch = FetchType.LAZY, optional = false)
+   @JoinColumn(name= "id_localidad")
    private Localidad localidad;
    
    // private Boolean borrado;

@@ -29,21 +29,19 @@ public class PersonaService implements IPersonaService {
       return personaRepo.findAll();
    }
 
-   /* @Override
+   @Override
    public void crearPersona(Persona per) {
-      System.out.println(per);
       personaRepo.save(per);
-   } */
+   }
 
-  /*  @Override
+   @Override
    public void borrarPersona(Long id) {
       personaRepo.deleteById(id); // Borrado REAL del registro en la BD.
-
       
       //  Persona per = personaRepo.findById(id).orElseThrow(null);
       //  per.setBorrado(true);
       // Borrado lógico del registro en la BS.
-   } */
+   }
 
    /* @Override
    public Persona buscarPersona(Long id) {
