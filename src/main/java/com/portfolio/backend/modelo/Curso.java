@@ -28,17 +28,9 @@ public class Curso {
    @JoinColumn(name = "id_entidad")
    private Entidad entidad;
 
-   /*
-    * @OneToOne(fetch = FetchType.EAGER, optional = false)
-    * @JoinColumn(name = "id_titulo")
-    * private Titulo titulo;
-    */
-
-   /*
-    * @ManyToOne(fetch = FetchType.EAGER, optional = false)
-    * @JoinColumn(name="id_persona")
-    * private Persona persona;
-    */
+   @ManyToOne(fetch = FetchType.EAGER, optional = false)
+   @JoinColumn(name="id_persona")
+   private Persona persona;
 
 }
 
